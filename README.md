@@ -268,3 +268,87 @@ O Dicionário de Dados Conceitual apresenta as principais entidades e seus atrib
 | valor_estornado | Valor devolvido ao cliente | Deve respeitar as regras de cancelamento da organização |
 | percentual_estorno | Percentual utilizado no estorno | Pode corresponder a 100% ou 60%, conforme a situação do pedido |
 | data_estorno | Data em que o estorno foi realizado | Deve registrar a data da operação |
+
+---
+
+## 6. Modelagem Conceitual
+
+A modelagem conceitual foi desenvolvida a partir dos processos, requisitos e regras de negócio identificados na Oya Cell. O objetivo é representar as principais informações necessárias para o gerenciamento de clientes, produtos, pedidos, pagamentos e estoque.
+
+### 6.1 Entidades identificadas
+
+Foram identificadas as seguintes entidades:
+
+- **CLIENTE:** representa os clientes cadastrados pela Oya Cell.
+- **PEDIDO:** representa os pedidos realizados pelos clientes.
+- **PRODUTO:** representa os produtos comercializados pela empresa.
+- **ITEM_PEDIDO:** representa cada produto e sua respectiva quantidade dentro de um pedido.
+- **PAGAMENTO:** representa os pagamentos realizados para os pedidos.
+- **FUNCIONARIO:** representa os funcionários envolvidos nos processos da organização.
+- **FUNCIONARIO_PEDIDO:** representa a participação dos funcionários nos pedidos.
+- **MOVIMENTACAO_ESTOQUE:** representa as entradas e saídas de produtos do estoque.
+- **ESTORNO:** representa os valores devolvidos ao cliente em casos de cancelamento.
+
+### 6.2 Relacionamentos e cardinalidades
+
+#### CLIENTE — PEDIDO
+Um cliente pode realizar vários pedidos, enquanto cada pedido pertence a um único cliente.
+
+**Cardinalidade:** CLIENTE 1:N PEDIDO
+
+#### PEDIDO — ITEM_PEDIDO
+Um pedido deve possuir um ou mais itens, enquanto cada item pertence a um único pedido.
+
+**Cardinalidade:** PEDIDO 1:N ITEM_PEDIDO
+
+#### PRODUTO — ITEM_PEDIDO
+Um produto pode aparecer em vários itens de pedidos diferentes, enquanto cada item representa um único produto.
+
+**Cardinalidade:** PRODUTO 1:N ITEM_PEDIDO
+
+Dessa forma, ITEM_PEDIDO resolve o relacionamento muitos-para-muitos existente entre PEDIDO e PRODUTO.
+
+#### PEDIDO — PAGAMENTO
+Um pedido pode possuir um ou mais pagamentos, enquanto cada pagamento está associado a um único pedido.
+
+**Cardinalidade:** PEDIDO 1:N PAGAMENTO
+
+#### FUNCIONARIO — PEDIDO
+Um funcionário pode participar de vários pedidos e um pedido pode envolver vários funcionários.
+
+Esse relacionamento N:N é resolvido pela entidade associativa FUNCIONARIO_PEDIDO.
+
+**Cardinalidades:**
+
+FUNCIONARIO 1:N FUNCIONARIO_PEDIDO
+
+PEDIDO 1:N FUNCIONARIO_PEDIDO
+
+#### PRODUTO — MOVIMENTACAO_ESTOQUE
+Um produto pode possuir várias movimentações de estoque, enquanto cada movimentação está relacionada a um único produto.
+
+**Cardinalidade:** PRODUTO 1:N MOVIMENTACAO_ESTOQUE
+
+#### FUNCIONARIO — MOVIMENTACAO_ESTOQUE
+Um funcionário pode registrar várias movimentações de estoque, enquanto cada movimentação deve identificar o funcionário responsável pelo registro.
+
+**Cardinalidade:** FUNCIONARIO 1:N MOVIMENTACAO_ESTOQUE
+
+#### PAGAMENTO — ESTORNO
+Um pagamento pode gerar um estorno quando ocorrer um cancelamento que permita a devolução do valor. Cada estorno deve estar relacionado ao pagamento correspondente.
+
+**Cardinalidade:** PAGAMENTO 1:N ESTORNO
+
+### 6.3 Restrições do modelo
+
+O modelo considera as seguintes restrições:
+
+- Cada pedido deve estar relacionado a um cliente.
+- Cada item de pedido deve estar relacionado a um pedido e a um produto.
+- A quantidade de um item de pedido deve ser maior que zero.
+- Cada pagamento deve estar relacionado a um pedido.
+- Cada movimentação de estoque deve estar relacionada a um produto.
+- As movimentações devem identificar se representam entrada ou saída de estoque.
+- A saída de produtos deve atualizar a quantidade disponível em estoque.
+- Os estornos devem estar relacionados aos pagamentos correspondentes.
+- O percentual de estorno deve respeitar as regras de cancelamento da Oya Cell, podendo ser integral ou de 60%, conforme a situação do pedido.
