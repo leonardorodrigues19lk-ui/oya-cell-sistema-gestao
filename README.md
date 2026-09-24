@@ -352,3 +352,33 @@ O modelo considera as seguintes restrições:
 - A saída de produtos deve atualizar a quantidade disponível em estoque.
 - Os estornos devem estar relacionados aos pagamentos correspondentes.
 - O percentual de estorno deve respeitar as regras de cancelamento da Oya Cell, podendo ser integral ou de 60%, conforme a situação do pedido.
+
+---
+
+## 7. Diagrama Entidade-Relacionamento (DER)
+
+O Diagrama Entidade-Relacionamento representa a estrutura conceitual dos dados do sistema proposto para a Oya Cell. O modelo foi elaborado com base nos requisitos, regras de negócio e processos identificados durante a pesquisa de campo.
+
+O modelo contempla o gerenciamento de clientes, pedidos, produtos, itens de pedido, pagamentos, funcionários, movimentações de estoque e estornos.
+
+![Diagrama Entidade-Relacionamento da Oya Cell](DER/DER_Oya_Cell.png)
+
+---
+
+## 8. Justificativa Técnica
+
+O modelo de dados proposto para a Oya Cell foi desenvolvido com base nas informações coletadas durante a pesquisa de campo e nos principais problemas identificados na organização, especialmente a dificuldade na organização dos pedidos e no controle de estoque.
+
+A entidade CLIENTE permite manter os dados necessários para identificar os clientes e relacioná-los aos seus pedidos. A entidade PEDIDO centraliza as informações de cada venda realizada, como data, valor total, status e forma de recebimento.
+
+A entidade ITEM_PEDIDO foi criada para representar os produtos presentes em cada pedido. Essa estrutura permite que um pedido possua vários produtos e que um mesmo produto possa estar presente em diferentes pedidos, além de registrar a quantidade e o preço praticado no momento da venda.
+
+A entidade PAGAMENTO permite registrar os pagamentos relacionados aos pedidos, incluindo a forma de pagamento, o valor e sua situação. A entidade ESTORNO complementa esse processo ao permitir o registro das devoluções de valores em casos de cancelamento, respeitando as regras estabelecidas pela Oya Cell.
+
+Para melhorar o controle de estoque, foi utilizada a entidade MOVIMENTACAO_ESTOQUE, responsável pelo registro das entradas e saídas dos produtos. Dessa forma, torna-se possível acompanhar as alterações realizadas na quantidade disponível de cada produto.
+
+As entidades FUNCIONARIO e FUNCIONARIO_PEDIDO permitem identificar a participação dos funcionários nos processos da organização, considerando que um funcionário pode participar de vários pedidos e um pedido pode envolver mais de um funcionário.
+
+A estrutura proposta busca reduzir a dependência de controles informais, melhorar a organização das informações e permitir maior rastreabilidade dos pedidos, pagamentos e movimentações de estoque.
+
+O modelo também foi desenvolvido de forma que possa ser ampliado futuramente, permitindo a inclusão de novas funcionalidades e integrações sem a necessidade de modificar completamente sua estrutura.
