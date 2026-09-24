@@ -48,3 +48,27 @@ Para comprovar a existência da organização e a realização da pesquisa de ca
 - **Fotos da fachada:** Disponibilizadas na pasta `Evidencias` deste repositório.
 
 As informações utilizadas no desenvolvimento do projeto foram obtidas por meio de pesquisa de campo e entrevista com a organização.
+
+---
+
+## 2. Processos de Negócio
+
+### Principais processos mapeados
+
+A partir da pesquisa de campo realizada na Oya Cell, foram identificados como processos relevantes para a modelagem do sistema o processamento de pedidos, o controle de estoque e o tratamento de cancelamentos.
+
+#### Processo de Pedido
+
+O processo inicia quando o cliente solicita produtos pelo balcão, telefone ou WhatsApp. O atendente recebe a solicitação, identifica os produtos e suas respectivas quantidades e registra o pedido. Após a definição dos itens e do valor total, é realizado o pagamento. Com o pagamento confirmado, os produtos são separados e o pedido segue para retirada no balcão ou entrega.
+
+#### Processo de Estoque
+
+O controle de estoque envolve entradas e saídas de produtos. As entradas ocorrem com o recebimento de novas mercadorias, enquanto as saídas estão relacionadas principalmente aos produtos vendidos nos pedidos. O sistema proposto deverá registrar essas movimentações para permitir maior controle da quantidade disponível.
+
+#### Processo de Cancelamento
+
+O processo de cancelamento verifica inicialmente a situação do pagamento e o estágio em que o pedido se encontra. As condições de cancelamento e estorno são aplicadas de acordo com as regras operacionais definidas pela organização.
+
+### Fluxogramas
+
+Os fluxogramas dos processos mapeados encontram-se na pasta `Fluxogramas` deste repositório.  
