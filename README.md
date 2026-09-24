@@ -114,3 +114,19 @@ O fluxograma representa o processo proposto para controle das entradas e saídas
 - **RF13 — Registrar cancelamentos:** O sistema deve permitir registrar o cancelamento de pedidos conforme as regras estabelecidas pela organização.
 
 - **RF14 — Registrar estornos:** O sistema deve permitir registrar os estornos associados a pedidos cancelados.
+
+### 3.2 Requisitos Não Funcionais
+
+- **RNF01 — Usabilidade:** O sistema deve possuir uma interface simples, organizada e de fácil utilização pelos funcionários da Oya Cell.
+
+- **RNF02 — Segurança:** O sistema deve exigir autenticação dos funcionários para acesso às funcionalidades e informações internas.
+
+- **RNF03 — Integridade dos dados:** O sistema deve manter consistência entre pedidos, pagamentos e movimentações de estoque, evitando registros incompatíveis.
+
+- **RNF04 — Desempenho:** O sistema deve permitir consultas de clientes, produtos, pedidos e estoque em tempo adequado para não prejudicar o atendimento.
+
+- **RNF05 — Disponibilidade:** O sistema deve estar disponível durante o horário de funcionamento da organização, exceto em períodos necessários de manutenção.
+
+- **RNF06 — Rastreabilidade:** O sistema deve manter registros das principais operações realizadas, permitindo identificar movimentações de pedidos, pagamentos e estoque.
+
+- **RNF07 — Privacidade:** O sistema deve proteger os dados cadastrais dos clientes, restringindo o acesso às informações às pessoas autorizadas.
