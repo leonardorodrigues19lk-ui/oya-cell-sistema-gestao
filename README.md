@@ -80,3 +80,37 @@ Os fluxogramas dos processos mapeados encontram-se na pasta `Fluxogramas` deste 
 O fluxograma representa o processo proposto para controle das entradas e saídas de produtos da Oya Cell. O processo foi modelado considerando as dificuldades identificadas durante a pesquisa de campo, principalmente a ausência de um registro estruturado da entrada de mercadorias e a utilização de contagem informal para verificar determinadas quantidades disponíveis.
 
 ![Fluxograma do Processo de Estoque](Fluxogramas/Fluxograma_Estoque_Oya_Cell.png)
+
+---
+
+## 3. Requisitos do Sistema
+
+### 3.1 Requisitos Funcionais
+
+- **RF01 — Cadastrar clientes:** O sistema deve permitir cadastrar clientes com suas informações de identificação e contato.
+
+- **RF02 — Cadastrar produtos:** O sistema deve permitir cadastrar produtos contendo código, descrição, categoria, preço e quantidade disponível.
+
+- **RF03 — Registrar pedidos:** O sistema deve permitir registrar pedidos realizados pelos clientes.
+
+- **RF04 — Adicionar produtos ao pedido:** O sistema deve permitir adicionar um ou vários produtos a um pedido, informando a quantidade de cada item.
+
+- **RF05 — Calcular valor do pedido:** O sistema deve calcular o valor total do pedido com base nos produtos e quantidades informados.
+
+- **RF06 — Registrar pagamentos:** O sistema deve permitir registrar pagamentos associados aos pedidos.
+
+- **RF07 — Registrar forma de pagamento:** O sistema deve permitir identificar a forma de pagamento utilizada, como PIX, cartão de débito, cartão de crédito ou boleto.
+
+- **RF08 — Controlar status do pedido:** O sistema deve permitir atualizar e consultar o status de cada pedido.
+
+- **RF09 — Controlar estoque:** O sistema deve atualizar a quantidade disponível dos produtos de acordo com suas entradas e saídas.
+
+- **RF10 — Registrar entrada de mercadorias:** O sistema deve permitir registrar a entrada de novas unidades de produtos no estoque.
+
+- **RF11 — Registrar saída de produtos:** O sistema deve registrar a saída dos produtos vendidos.
+
+- **RF12 — Registrar funcionário responsável:** O sistema deve identificar os funcionários envolvidos no registro ou processamento dos pedidos.
+
+- **RF13 — Registrar cancelamentos:** O sistema deve permitir registrar o cancelamento de pedidos conforme as regras estabelecidas pela organização.
+
+- **RF14 — Registrar estornos:** O sistema deve permitir registrar os estornos associados a pedidos cancelados.
