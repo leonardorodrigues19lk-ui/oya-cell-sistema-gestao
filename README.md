@@ -131,6 +131,8 @@ O fluxograma representa o processo proposto para controle das entradas e saídas
 
 - **RNF07 — Privacidade:** O sistema deve proteger os dados cadastrais dos clientes, restringindo o acesso às informações às pessoas autorizadas.
 
+---
+
 ## 4. Regras de Negócio
 
 As regras de negócio foram definidas com base nas informações obtidas durante o levantamento realizado na Oya Cell e também nas necessidades identificadas para o sistema proposto.
@@ -170,3 +172,99 @@ As regras de negócio foram definidas com base nas informações obtidas durante
 - **RN17 — Cancelamento antes da saída:** Caso o pedido já tenha sido pago, mas ainda não tenha saído da loja, o cancelamento poderá ser realizado com estorno integral do valor pago.
 
 - **RN18 — Cancelamento após a saída:** Caso o cancelamento seja permitido após o pedido ter saído da loja, o cliente receberá o estorno correspondente a 60% do valor pago.
+
+---
+
+## 5. Dicionário de Dados Conceitual
+
+O Dicionário de Dados Conceitual apresenta as principais entidades e seus atributos identificados durante a análise dos processos da Oya Cell. Os exemplos de dados apresentados são fictícios, preservando as informações reais dos clientes e da organização.
+
+### Entidade: CLIENTE
+
+| Atributo | Descrição | Regra de Negócio |
+|---|---|---|
+| id_cliente | Identificador único do cliente | Cada cliente deve possuir um identificador único |
+| nome | Nome do cliente ou empresa | Deve ser informado no cadastro |
+| cpf_cnpj | CPF ou CNPJ do cliente | Utilizado para identificação do cliente |
+| contato | Telefone ou outro contato do cliente | Utilizado para comunicação com o cliente |
+
+### Entidade: PRODUTO
+
+| Atributo | Descrição | Regra de Negócio |
+|---|---|---|
+| id_produto | Identificador único do produto | Cada produto deve possuir um identificador único |
+| codigo | Código utilizado para identificar o produto | Cada produto deve possuir um código |
+| descricao | Nome ou descrição do produto | Deve permitir identificar o produto comercializado |
+| categoria | Categoria do produto | Pode identificar o produto como componente ou acessório |
+| preco | Preço de venda do produto | Deve possuir um valor válido |
+| quantidade_estoque | Quantidade disponível no estoque | Deve ser atualizada conforme as entradas e saídas |
+
+### Entidade: PEDIDO
+
+| Atributo | Descrição | Regra de Negócio |
+|---|---|---|
+| id_pedido | Identificador único do pedido | Cada pedido deve possuir um identificador único |
+| data_pedido | Data em que o pedido foi realizado | Deve registrar a data da realização do pedido |
+| valor_total | Valor total do pedido | Deve ser calculado a partir dos itens do pedido |
+| status | Situação atual do pedido | Pode indicar situações como em separação, saiu para entrega, finalizado ou cancelado |
+| forma_recebimento | Forma escolhida para receber o pedido | Pode ser retirada no balcão ou entrega |
+| id_cliente | Cliente responsável pelo pedido | Cada pedido deve estar associado a um cliente |
+
+### Entidade: ITEM_PEDIDO
+
+| Atributo | Descrição | Regra de Negócio |
+|---|---|---|
+| id_item | Identificador do item do pedido | Cada item deve ser identificado |
+| id_pedido | Pedido ao qual o item pertence | Todo item deve estar associado a um pedido |
+| id_produto | Produto incluído no pedido | Todo item deve estar associado a um produto |
+| quantidade | Quantidade do produto solicitada | Deve ser maior que zero |
+| preco_unitario | Preço do produto no momento da venda | Deve registrar o valor praticado no pedido |
+| subtotal | Valor correspondente ao item | Calculado a partir da quantidade e do preço unitário |
+
+### Entidade: PAGAMENTO
+
+| Atributo | Descrição | Regra de Negócio |
+|---|---|---|
+| id_pagamento | Identificador único do pagamento | Cada pagamento deve possuir um identificador |
+| id_pedido | Pedido relacionado ao pagamento | Todo pagamento deve estar associado a um pedido |
+| forma_pagamento | Forma utilizada para pagamento | Pode ser PIX, cartão de débito, cartão de crédito ou boleto |
+| valor | Valor registrado no pagamento | Deve possuir valor maior que zero |
+| data_pagamento | Data em que o pagamento foi realizado | Deve registrar a data do pagamento |
+| status_pagamento | Situação do pagamento | Permite identificar a situação do pagamento |
+
+### Entidade: FUNCIONARIO
+
+| Atributo | Descrição | Regra de Negócio |
+|---|---|---|
+| id_funcionario | Identificador único do funcionário | Cada funcionário deve possuir um identificador |
+| nome | Nome do funcionário | Deve ser informado no cadastro |
+| funcao | Função exercida pelo funcionário | Utilizada para identificar sua responsabilidade na organização |
+
+### Entidade: FUNCIONARIO_PEDIDO
+
+| Atributo | Descrição | Regra de Negócio |
+|---|---|---|
+| id_funcionario | Funcionário relacionado ao pedido | Deve corresponder a um funcionário cadastrado |
+| id_pedido | Pedido relacionado ao funcionário | Deve corresponder a um pedido existente |
+| participacao | Participação do funcionário no pedido | Permite identificar sua atuação no processamento do pedido |
+
+### Entidade: MOVIMENTACAO_ESTOQUE
+
+| Atributo | Descrição | Regra de Negócio |
+|---|---|---|
+| id_movimentacao | Identificador da movimentação | Cada movimentação deve possuir um identificador |
+| id_produto | Produto movimentado | Toda movimentação deve estar associada a um produto |
+| id_funcionario | Funcionário responsável pelo registro | Deve identificar o funcionário relacionado à movimentação |
+| tipo_movimentacao | Tipo da movimentação realizada | Deve indicar entrada ou saída |
+| quantidade | Quantidade movimentada | Deve possuir valor maior que zero |
+| data_movimentacao | Data da movimentação | Deve registrar quando a movimentação ocorreu |
+
+### Entidade: ESTORNO
+
+| Atributo | Descrição | Regra de Negócio |
+|---|---|---|
+| id_estorno | Identificador único do estorno | Cada estorno deve possuir um identificador |
+| id_pagamento | Pagamento relacionado ao estorno | Todo estorno deve estar relacionado a um pagamento |
+| valor_estornado | Valor devolvido ao cliente | Deve respeitar as regras de cancelamento da organização |
+| percentual_estorno | Percentual utilizado no estorno | Pode corresponder a 100% ou 60%, conforme a situação do pedido |
+| data_estorno | Data em que o estorno foi realizado | Deve registrar a data da operação |
