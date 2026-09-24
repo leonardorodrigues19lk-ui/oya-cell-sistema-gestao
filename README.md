@@ -40,16 +40,16 @@ Além disso, os problemas relacionados à organização dos pedidos e ao control
 
 ### Evidências da organização
 
-Para comprovar a existência da organização e a realização da pesquisa de campo, foram coletadas as seguintes informações:
-
 - **Endereço:** Rua Barão de Duplat, 389
-- **Telefone/Contato:** (11) 98387-1006
-- **Localização:** [Google Maps](https://maps.app.goo.gl/D424JzgShK8uoQkv9)
-- **Nome e função do responsável entrevistado:** Nader, gerente
-- **Data da entrevista:** 19/09/2026
-- **Fotos da fachada:** Disponibilizadas na pasta `Evidencias` deste repositório.
+- **Contato:** (11) 98387-1006
+- **Data da entrevista:** 19/09
+- **Nome e função do responsável entrevistado:** A preencher
 
-As informações utilizadas no desenvolvimento do projeto foram obtidas por meio de pesquisa de campo e entrevista com a organização.
+#### Registro da visita de campo
+
+A imagem abaixo registra a visita realizada pelo grupo à Oya Cell durante o levantamento de informações para o projeto.
+
+![Visita de campo à Oya Cell](Evidencias/visita_oya_cell.jpg)
 
 ---
 
