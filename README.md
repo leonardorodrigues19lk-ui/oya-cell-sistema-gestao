@@ -7,8 +7,10 @@ Projeto acadêmico de modelagem de um sistema de gestão de informações para a
 
 - **Nome dos alunos e RGM:**
   - Leonardo Oliveira Rodrigues — 47569590 
-  - Nome do integrante — RGM
-  - Nome do integrante — RGM
+  - Lucas Gabriel Roman Martins  - 46847618
+  - Gabriel Arnaldo Da Silva - 47480441
+  - Emily Mayara Matos Moreira - 47323523
+  - Kauã Gomes da Silva - 47262265
 
 ---
 
@@ -43,7 +45,7 @@ Para comprovar a existência da organização e a realização da pesquisa de ca
 - **Endereço:** Rua Barão de Duplat, 389
 - **Telefone/Contato:** (11) 98387-1006
 - **Localização:** [Google Maps](https://maps.app.goo.gl/D424JzgShK8uoQkv9)
-- **Nome e função do responsável entrevistado:** A preencher
+- **Nome e função do responsável entrevistado:** Nader, gerente
 - **Data da entrevista:** 19/09/2026
 - **Fotos da fachada:** Disponibilizadas na pasta `Evidencias` deste repositório.
 
