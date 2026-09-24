@@ -71,4 +71,10 @@ O processo de cancelamento verifica inicialmente a situação do pagamento e o e
 
 ### Fluxogramas
 
-Os fluxogramas dos processos mapeados encontram-se na pasta `Fluxogramas` deste repositório.  
+Os fluxogramas dos processos mapeados encontram-se na pasta `Fluxogramas` deste repositório. 
+
+### Fluxograma do Processo de Estoque
+
+O fluxograma representa o processo proposto para controle das entradas e saídas de produtos da Oya Cell. O processo foi modelado considerando as dificuldades identificadas durante a pesquisa de campo, principalmente a ausência de um registro estruturado da entrada de mercadorias e a utilização de contagem informal para verificar determinadas quantidades disponíveis.
+
+![Fluxograma do Processo de Estoque](Fluxogramas/Fluxograma_Estoque_Oya_Cell.png)
