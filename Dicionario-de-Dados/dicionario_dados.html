@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dicionário de Dados - Oya Cell</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+            line-height: 1.6;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        h2 {
+            margin-top: 40px;
+        }
+
+        .introducao {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: white;
+            margin-bottom: 30px;
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #e9e9e9;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Dicionário de Dados - Oya Cell</h1>
+
+    <div class="introducao">
+        <p>
+            Este dicionário de dados foi elaborado para organizar e explicar
+            as principais informações utilizadas no sistema proposto para a Oya Cell.
+        </p>
+
+        <p>
+            As entidades foram definidas a partir das informações levantadas durante
+            a pesquisa de campo e dos processos identificados na empresa, principalmente
+            relacionados a clientes, pedidos, produtos, pagamentos e controle de estoque.
+        </p>
+
+        <p>
+            Os dados apresentados neste documento servem apenas para representar
+            a estrutura do sistema. Informações pessoais reais de clientes não são
+            apresentadas.
+        </p>
+    </div>
+
+
+    <h2>1. Cliente</h2>
+
+    <p>
+        Armazena as informações básicas dos clientes atendidos pela Oya Cell.
+    </p>
+
+    <table>
+        <tr>
+            <th>Atributo</th>
+            <th>Descrição</th>
+            <th>Regra de Negócio</th>
+        </tr>
+
+        <tr>
+            <td>id_cliente</td>
+            <td>Identificador do cliente.</td>
+            <td>Cada cliente deve possuir um identificador único.</td>
+        </tr>
+
+        <tr>
+            <td>nome</td>
+            <td>Nome do cliente ou da empresa.</td>
+            <td>O nome deve ser informado no cadastro.</td>
+        </tr>
+
+        <tr>
+            <td>cpf_cnpj</td>
+            <td>CPF ou CNPJ utilizado para identificar o cliente.</td>
+            <td>O documento deve estar relacionado ao cliente cadastrado.</td>
+        </tr>
+
+        <tr>
+            <td>contato</td>
+            <td>Informação utilizada para entrar em contato com o cliente.</td>
+            <td>O contato pode ser utilizado durante o atendimento e acompanhamento do pedido.</td>
+        </tr>
+    </table>
+
+
+    <h2>2. Produto</h2>
+
+    <p>
+        Representa os componentes e acessórios comercializados pela Oya Cell.
+    </p>
+
+    <table>
+        <tr>
+            <th>Atributo</th>
+            <th>Descrição</th>
+            <th>Regra de Negócio</th>
+        </tr>
+
+        <tr>
+            <td>id_produto</td>
+            <td>Identificador do produto.</td>
+            <td>Cada produto deve possuir um identificador único.</td>
+        </tr>
+
+        <tr>
+            <td>codigo</td>
+            <td>Código utilizado para identificar o produto.</td>
+            <td>Cada produto deve possuir um código para facilitar sua identificação.</td>
+        </tr>
+
+        <tr>
+            <td>descricao</td>
+            <td>Nome ou descrição do produto.</td>
+            <td>A descrição deve permitir que o produto seja identificado.</td>
+        </tr>
+
+        <tr>
+            <td>categoria</td>
+            <td>Indica a categoria do produto.</td>
+            <td>O produto pode ser classificado, por exemplo, como componente ou acessório.</td>
+        </tr>
+
+        <tr>
+            <td>preco</td>
+            <td>Preço de venda do produto.</td>
+            <td>O produto deve possuir um preço válido para sua comercialização.</td>
+        </tr>
+
+        <tr>
+            <td>quantidade_estoque</td>
+            <td>Quantidade disponível do produto.</td>
+            <td>A quantidade deve ser atualizada de acordo com as entradas e saídas do estoque.</td>
+        </tr>
+    </table>
+
+
+    <h2>3. Pedido</h2>
+
+    <p>
+        Registra os pedidos realizados pelos clientes.
+    </p>
+
+    <table>
+        <tr>
+            <th>Atributo</th>
+            <th>Descrição</th>
+            <th>Regra de Negócio</th>
+        </tr>
+
+        <tr>
+            <td>id_pedido</td>
+            <td>Identificador do pedido.</td>
+            <td>Cada pedido deve possuir um identificador único.</td>
+        </tr>
+
+        <tr>
+            <td>data_pedido</td>
+            <td>Data em que o pedido foi realizado.</td>
+            <td>A data deve ser registrada no momento da realização do pedido.</td>
+        </tr>
+
+        <tr>
+            <td>valor_total</td>
+            <td>Valor total do pedido.</td>
+            <td>O valor é obtido a partir dos produtos e das quantidades do pedido.</td>
+        </tr>
+
+        <tr>
+            <td>status</td>
+            <td>Indica a situação atual do pedido.</td>
+            <td>O pedido pode estar em separação, saiu para entrega, finalizado ou cancelado.</td>
+        </tr>
+
+        <tr>
+            <td>forma_recebimento</td>
+            <td>Indica como o cliente receberá o pedido.</td>
+            <td>O pedido pode ser retirado no balcão ou enviado para entrega.</td>
+        </tr>
+
+        <tr>
+            <td>id_cliente</td>
+            <td>Identifica o cliente responsável pelo pedido.</td>
+            <td>Todo pedido deve estar relacionado a um cliente.</td>
+        </tr>
+    </table>
+
+
+    <h2>4. Item do Pedido</h2>
+
+    <p>
+        Representa cada produto que faz parte de um pedido.
+    </p>
+
+    <table>
+        <tr>
+            <th>Atributo</th>
+            <th>Descrição</th>
+            <th>Regra de Negócio</th>
+        </tr>
+
+        <tr>
+            <td>id_item</td>
+            <td>Identificador do item.</td>
+            <td>Cada item do pedido deve ser identificado.</td>
+        </tr>
+
+        <tr>
+            <td>id_pedido</td>
+            <td>Identifica o pedido ao qual o item pertence.</td>
+            <td>Todo item deve estar relacionado a um pedido.</td>
+        </tr>
+
+        <tr>
+            <td>id_produto</td>
+            <td>Identifica o produto incluído no pedido.</td>
+            <td>Todo item deve estar relacionado a um produto.</td>
+        </tr>
+
+        <tr>
+            <td>quantidade</td>
+            <td>Quantidade solicitada daquele produto.</td>
+            <td>A quantidade deve ser maior que zero.</td>
+        </tr>
+
+        <tr>
+            <td>preco_unitario</td>
+            <td>Preço do produto no momento da venda.</td>
+            <td>O preço utilizado na venda deve ficar registrado no item.</td>
+        </tr>
+
+        <tr>
+            <td>subtotal</td>
+            <td>Valor daquele item dentro do pedido.</td>
+            <td>É calculado considerando a quantidade e o preço unitário.</td>
+        </tr>
+    </table>
+
+
+    <h2>5. Pagamento</h2>
+
+    <p>
+        Registra os pagamentos realizados para os pedidos.
+    </p>
+
+    <table>
+        <tr>
+            <th>Atributo</th>
+            <th>Descrição</th>
+            <th>Regra de Negócio</th>
+        </tr>
+
+        <tr>
+            <td>id_pagamento</td>
+            <td>Identificador do pagamento.</td>
+            <td>Cada pagamento deve possuir um identificador único.</td>
+        </tr>
+
+        <tr>
+            <td>id_pedido</td>
+            <td>Identifica o pedido relacionado ao pagamento.</td>
+            <td>Todo pagamento deve estar relacionado a um pedido.</td>
+        </tr>
+
+        <tr>
+            <td>forma_pagamento</td>
+            <td>Forma escolhida para realizar o pagamento.</td>
+            <td>Pode ser PIX, cartão de débito, cartão de crédito ou boleto.</td>
+        </tr>
+
+        <tr>
+            <td>valor</td>
+            <td>Valor registrado no pagamento.</td>
+            <td>O valor do pagamento deve ser maior que zero.</td>
+        </tr>
+
+        <tr>
+            <td>data_pagamento</td>
+            <td>Data em que o pagamento foi realizado.</td>
+            <td>A data da operação deve ser registrada.</td>
+        </tr>
+
+        <tr>
+            <td>status_pagamento</td>
+            <td>Indica a situação do pagamento.</td>
+            <td>Permite acompanhar se o pagamento foi confirmado ou ainda está pendente.</td>
+        </tr>
+    </table>
+
+
+    <h2>6. Funcionário</h2>
+
+    <p>
+        Representa os funcionários envolvidos nos processos da Oya Cell.
+    </p>
+
+    <table>
+        <tr>
+            <th>Atributo</th>
+            <th>Descrição</th>
+            <th>Regra de Negócio</th>
+        </tr>
+
+        <tr>
+            <td>id_funcionario</td>
+            <td>Identificador do funcionário.</td>
+            <td>Cada funcionário deve possuir um identificador único.</td>
+        </tr>
+
+        <tr>
+            <td>nome</td>
+            <td>Nome do funcionário.</td>
+            <td>O nome deve ser informado no cadastro.</td>
+        </tr>
+
+        <tr>
+            <td>funcao</td>
+            <td>Função exercida pelo funcionário.</td>
+            <td>Permite identificar sua responsabilidade dentro da organização.</td>
+        </tr>
+    </table>
+
+
+    <h2>7. Funcionário e Pedido</h2>
+
+    <p>
+        Registra a participação dos funcionários nos pedidos.
+        Essa estrutura é necessária porque um pedido pode envolver mais de um
+        funcionário e um funcionário pode participar de vários pedidos.
+    </p>
+
+    <table>
+        <tr>
+            <th>Atributo</th>
+            <th>Descrição</th>
+            <th>Regra de Negócio</th>
+        </tr>
+
+        <tr>
+            <td>id_funcionario</td>
+            <td>Identifica o funcionário.</td>
+            <td>Deve estar relacionado a um funcionário cadastrado.</td>
+        </tr>
+
+        <tr>
+            <td>id_pedido</td>
+            <td>Identifica o pedido.</td>
+            <td>Deve estar relacionado a um pedido existente.</td>
+        </tr>
+
+        <tr>
+            <td>participacao</td>
+            <td>Indica a participação do funcionário naquele pedido.</td>
+            <td>Permite registrar a atuação do funcionário no processamento do pedido.</td>
+        </tr>
+    </table>
+
+
+    <h2>8. Movimentação de Estoque</h2>
+
+    <p>
+        Registra as entradas e saídas dos produtos, ajudando no controle
+        da quantidade disponível no estoque.
+    </p>
+
+    <table>
+        <tr>
+            <th>Atributo</th>
+            <th>Descrição</th>
+            <th>Regra de Negócio</th>
+        </tr>
+
+        <tr>
+            <td>id_movimentacao</td>
+            <td>Identificador da movimentação.</td>
+            <td>Cada movimentação deve possuir um identificador.</td>
+        </tr>
+
+        <tr>
+            <td>id_produto</td>
+            <td>Identifica o produto movimentado.</td>
+            <td>Toda movimentação deve estar relacionada a um produto.</td>
+        </tr>
+
+        <tr>
+            <td>id_funcionario</td>
+            <td>Identifica o funcionário responsável pelo registro.</td>
+            <td>A movimentação deve permitir identificar quem realizou o registro.</td>
+        </tr>
+
+        <tr>
+            <td>tipo_movimentacao</td>
+            <td>Indica o tipo de movimentação.</td>
+            <td>Deve indicar se a movimentação é uma entrada ou uma saída.</td>
+        </tr>
+
+        <tr>
+            <td>quantidade</td>
+            <td>Quantidade de produtos movimentada.</td>
+            <td>A quantidade informada deve ser maior que zero.</td>
+        </tr>
+
+        <tr>
+            <td>data_movimentacao</td>
+            <td>Data em que ocorreu a movimentação.</td>
+            <td>A data da movimentação deve ser registrada.</td>
+        </tr>
+    </table>
+
+
+    <h2>9. Estorno</h2>
+
+    <p>
+        Registra a devolução de valores ao cliente quando ocorre um
+        cancelamento que permite estorno.
+    </p>
+
+    <table>
+        <tr>
+            <th>Atributo</th>
+            <th>Descrição</th>
+            <th>Regra de Negócio</th>
+        </tr>
+
+        <tr>
+            <td>id_estorno</td>
+            <td>Identificador do estorno.</td>
+            <td>Cada estorno deve possuir um identificador único.</td>
+        </tr>
+
+        <tr>
+            <td>id_pagamento</td>
+            <td>Identifica o pagamento relacionado ao estorno.</td>
+            <td>Todo estorno deve estar relacionado a um pagamento.</td>
+        </tr>
+
+        <tr>
+            <td>valor_estornado</td>
+            <td>Valor devolvido ao cliente.</td>
+            <td>O valor deve respeitar a regra de cancelamento aplicada ao pedido.</td>
+        </tr>
+
+        <tr>
+            <td>percentual_estorno</td>
+            <td>Percentual utilizado para calcular o valor devolvido.</td>
+            <td>O estorno pode ser integral ou de 60%, dependendo da situação do pedido.</td>
+        </tr>
+
+        <tr>
+            <td>data_estorno</td>
+            <td>Data em que o estorno foi realizado.</td>
+            <td>A data da operação deve ser registrada.</td>
+        </tr>
+    </table>
+
+
+    <h2>Considerações finais</h2>
+
+    <p>
+        O dicionário de dados foi desenvolvido para manter as informações do
+        projeto organizadas e facilitar o entendimento do modelo de dados.
+        A estrutura proposta busca atender principalmente às necessidades
+        identificadas nos processos de pedidos e controle de estoque da Oya Cell.
+    </p>
+
+</body>
+
+</html>
