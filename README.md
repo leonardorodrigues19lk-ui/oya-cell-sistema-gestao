@@ -382,3 +382,57 @@ As entidades FUNCIONARIO e FUNCIONARIO_PEDIDO permitem identificar a participaç
 A estrutura proposta busca reduzir a dependência de controles informais, melhorar a organização das informações e permitir maior rastreabilidade dos pedidos, pagamentos e movimentações de estoque.
 
 O modelo também foi desenvolvido de forma que possa ser ampliado futuramente, permitindo a inclusão de novas funcionalidades e integrações sem a necessidade de modificar completamente sua estrutura.
+
+---
+
+## 9. Uso de Inteligência Artificial
+
+Durante o desenvolvimento deste projeto, utilizamos o ChatGPT como ferramenta de apoio para auxiliar no entendimento da atividade e na organização das etapas do trabalho.
+
+### Ferramenta utilizada
+- ChatGPT
+
+### Como a IA foi utilizada
+
+A Inteligência Artificial foi utilizada principalmente para:
+
+- Auxiliar no entendimento das etapas e dos requisitos solicitados na atividade.
+- Obter exemplos de como organizar e estruturar a documentação do projeto.
+- Consultar exemplos de modelos de estruturação de requisitos, regras de negócio e dicionário de dados.
+- Consultar exemplos de Diagramas Entidade-Relacionamento (DER) para compreender melhor entidades, atributos, relacionamentos e cardinalidades.
+- Auxiliar com orientações sobre como organizar os arquivos e pastas do projeto no GitHub.
+- Auxiliar com dúvidas sobre como inserir imagens, diagramas e outros arquivos no repositório.
+- Revisar o DER desenvolvido pelo grupo, buscando identificar possíveis erros e receber sugestões de melhoria.
+
+### Exemplos de prompts utilizados
+
+Alguns exemplos de perguntas realizadas durante o desenvolvimento foram:
+
+> "Pode me explicar o que precisa ser feito nessa atividade?"
+
+> "Me dê um exemplo de como posso estruturar essa parte do trabalho."
+
+> "Me mostre um exemplo de DER para eu entender como funciona."
+
+> "Como faço para criar uma pasta no GitHub e colocar meu DER?"
+
+> "Este é o DER que fizemos. Pode verificar se está correto e dar dicas do que podemos melhorar?"
+
+### Verificação das respostas
+
+As respostas fornecidas pela Inteligência Artificial foram utilizadas como material de apoio e referência. As sugestões foram comparadas com as informações obtidas durante a pesquisa de campo realizada na Oya Cell e com os conteúdos estudados durante a disciplina.
+
+Quando uma sugestão não correspondia às informações levantadas sobre a empresa, ela era ajustada ou descartada.
+
+### Decisões do grupo
+
+A definição dos processos, regras de negócio, entidades, atributos e relacionamentos foi realizada considerando as informações obtidas com a organização estudada. Os exemplos apresentados pela IA foram utilizados como apoio para facilitar o entendimento e a organização dessas informações.
+
+O DER desenvolvido pelo grupo também foi apresentado à ferramenta para revisão, com o objetivo de receber sugestões e identificar possíveis pontos de melhoria.
+
+### Reflexão crítica
+
+O uso da Inteligência Artificial facilitou o entendimento de alguns conceitos e ajudou na organização do trabalho e do repositório. Entretanto, percebemos que as respostas geradas pela IA nem sempre representam exatamente a realidade da organização estudada.
+
+Por esse motivo, foi necessário analisar as sugestões e compará-las com as informações obtidas durante a pesquisa de campo. Dessa forma, a IA foi utilizada como ferramenta de apoio, enquanto as decisões finais foram tomadas pelo grupo com base nas informações da Oya Cell e nos conhecimentos adquiridos durante a disciplina.
+
