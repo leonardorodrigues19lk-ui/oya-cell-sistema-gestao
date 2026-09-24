@@ -130,3 +130,43 @@ O fluxograma representa o processo proposto para controle das entradas e saídas
 - **RNF06 — Rastreabilidade:** O sistema deve manter registros das principais operações realizadas, permitindo identificar movimentações de pedidos, pagamentos e estoque.
 
 - **RNF07 — Privacidade:** O sistema deve proteger os dados cadastrais dos clientes, restringindo o acesso às informações às pessoas autorizadas.
+
+## 4. Regras de Negócio
+
+As regras de negócio foram definidas com base nas informações obtidas durante o levantamento realizado na Oya Cell e também nas necessidades identificadas para o sistema proposto.
+
+- **RN01 — Cliente e pedido:** Um cliente pode realizar vários pedidos, enquanto cada pedido deve estar associado a um cliente.
+
+- **RN02 — Produtos do pedido:** Um pedido pode possuir vários produtos, e um mesmo produto pode estar presente em diferentes pedidos.
+
+- **RN03 — Quantidade do item:** Para cada produto incluído em um pedido deve ser registrada a quantidade solicitada.
+
+- **RN04 — Valor do pedido:** O valor total do pedido deve ser determinado a partir dos produtos, das quantidades e dos valores registrados no pedido.
+
+- **RN05 — Pagamento:** Todo pagamento deve estar associado a um pedido.
+
+- **RN06 — Múltiplos pagamentos:** Um pedido pode possuir mais de um pagamento associado.
+
+- **RN07 — Forma de pagamento:** Os pagamentos podem ser realizados por PIX, cartão de débito, cartão de crédito ou boleto.
+
+- **RN08 — Liberação do pedido:** O pedido deve ser liberado para retirada ou entrega após a confirmação do pagamento.
+
+- **RN09 — Funcionários e pedidos:** Um funcionário pode participar de vários pedidos, e um pedido pode possuir a participação de mais de um funcionário.
+
+- **RN10 — Saída de estoque:** A venda de um produto deve gerar uma saída de estoque correspondente à quantidade vendida.
+
+- **RN11 — Entrada de estoque:** O recebimento de novas mercadorias deve gerar um registro de entrada no estoque.
+
+- **RN12 — Movimentação de estoque:** Toda movimentação de estoque deve identificar o produto, o tipo de movimentação, a quantidade e a data da movimentação.
+
+- **RN13 — Quantidade disponível:** A quantidade disponível de um produto deve ser atualizada de acordo com suas entradas e saídas.
+
+- **RN14 — Forma de recebimento:** O pedido pode ser retirado no balcão ou encaminhado para entrega.
+
+- **RN15 — Finalização no balcão:** O pedido retirado e entregue ao cliente no balcão deve ser marcado como finalizado.
+
+- **RN16 — Status do pedido:** O pedido deve possuir um status que represente sua situação durante o processo, como em separação, saiu para entrega, finalizado ou cancelado.
+
+- **RN17 — Cancelamento antes da saída:** Caso o pedido já tenha sido pago, mas ainda não tenha saído da loja, o cancelamento poderá ser realizado com estorno integral do valor pago.
+
+- **RN18 — Cancelamento após a saída:** Caso o cancelamento seja permitido após o pedido ter saído da loja, o cliente receberá o estorno correspondente a 60% do valor pago.
